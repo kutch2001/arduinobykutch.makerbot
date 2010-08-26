@@ -1,0 +1,1 @@
+Receive the divide by zero error when Carve > Layer Thickness (mm) is set to 0.37.  If set to lower or higher do not encounter error and have no problems generating gcode.

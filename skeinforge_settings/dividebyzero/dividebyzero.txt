@@ -1,0 +1,59 @@
+[18:39:46] D:\Projects\makerbot\Dino1-left.stl
+[18:39:46] Loading machine: Cupcake CNC w/ heated build platform
+[18:39:46] Loading simulator.
+[18:39:46] Loading driver: replicatorg.drivers.gen3.Sanguino3GDriver
+[18:39:48] Motherboard firmware v2.2
+[18:39:48] Extruder controller firmware v2.3
+[18:40:14] Beginning toolpath generation.
+[18:42:09] Traceback (most recent call last):
+[18:42:09]   File "skeinforge.py", line 346, in <module>
+[18:42:09]     main()
+[18:42:09]   File "skeinforge.py", line 341, in main
+[18:42:09]     writeOutput( ' '.join(args) )
+[18:42:09]   File "skeinforge.py", line 278, in writeOutput
+[18:42:09]     pluginModule.writeOutput( fileName )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\export.py", line 135, in writeOutput
+[18:42:09]     gcodeText = unpause.getUnpauseChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\unpause.py", line 74, in getUnpauseChainGcode
+[18:42:09]     gcodeText = fillet.getFilletChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\fillet.py", line 240, in getFilletChainGcode
+[18:42:09]     gcodeText = oozebane.getOozebaneChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\oozebane.py", line 112, in getOozebaneChainGcode
+[18:42:09]     gcodeText = wipe.getWipeChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\wipe.py", line 100, in getWipeChainGcode
+[18:42:09]     gcodeText = hop.getHopChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\hop.py", line 87, in getHopChainGcode
+[18:42:09]     gcodeText = stretch.getStretchChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\stretch.py", line 102, in getStretchChainGcode
+[18:42:09]     gcodeText = cool.getCoolChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\cool.py", line 103, in getCoolChainGcode
+[18:42:09]     gcodeText = clip.getClipChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\clip.py", line 91, in getClipChainGcode
+[18:42:09]     gcodeText = comb.getCombChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\comb.py", line 97, in getCombChainGcode
+[18:42:09]     gcodeText = tower.getTowerChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\tower.py", line 101, in getTowerChainGcode
+[18:42:09]     gcodeText = raft.getRaftChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\raft.py", line 207, in getRaftChainGcode
+[18:42:09]     gcodeText = speed.getSpeedChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\speed.py", line 111, in getSpeedChainGcode
+[18:42:09]     gcodeText = multiply.getMultiplyChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\multiply.py", line 94, in getMultiplyChainGcode
+[18:42:09]     gcodeText = fill.getFillChainGcode( fileName, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\fill.py", line 386, in getFillChainGcode
+[18:42:09]     return getFillGcode( gcodeText, fillPreferences )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\fill.py", line 398, in getFillGcode
+[18:42:09]     skein.parseGcode( fillPreferences, gcodeText )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\fill.py", line 1206, in parseGcode
+[18:42:09]     self.addFill( layerIndex )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\fill.py", line 964, in addFill
+[18:42:09]     paths = euclidean.getPathsFromEndpoints( endpoints, layerFillInset, aroundPixelTable, aroundWidth )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\skeinforge_utilities\euclidean.py", line 552, in getPathsFromEndpoints
+[18:42:09]     addPointToPath( path, pixelTable, nextEndpoint.point, width )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\skeinforge_utilities\euclidean.py", line 91, in addPointToPath
+[18:42:09]     addSegmentToPixelTable( begin, point, pixelTable, 0, 0, width )
+[18:42:09]   File "D:\Program Files\replicatorg-0017\skeinforge\skeinforge_tools\skeinforge_utilities\euclidean.py", line 123, in addSegmentToPixelTable
+[18:42:09]     gradient = deltaY / deltaX
+[18:42:09] ZeroDivisionError: float division by zero
+[18:42:09] Unrecognized error code returned by Skeinforge.
+[18:42:09] Toolpath generation failed!
