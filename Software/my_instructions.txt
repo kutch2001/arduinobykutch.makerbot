@@ -1,0 +1,31 @@
+Available in the makerbot google group:  http://groups.google.com/group/makerbot/browse_thread/thread/46964fb37a28e14c
+
+Thank you Koen Kooi for pointing me in the right direction.  I have had quite the experience getting it all working.  No offense to the powers that be, but I sooo much preferred the arduino version as it was much more intuitive, but still not install and compile friendly (a play on plug and play).
+
+Make sure have python installed..  In my limited experience with it, has to be installed at the root of the drive, i.e. can't be in c:\program files\python27.  No clue why but that hasn't worked for me with other things..  I actually have it as c:\python27 and d:\python27, but don't think need it in both places.
+
+Started off following the instructions here and the compile simply didn't work.  Was following them on my WinXP SP3 system:
+http://wiki.makerbot.com/v2-firmware
+
+Had to manually edit my path parameter to be the following.  To edit path, right click on My Computer, choose Properties, Advanced tab, and the Environment Variables button (bottom left).  Edit the path by selecting Path (under system variables at the bottom), press the Edit button, and in the new window in the Variable Value box place a semi-colon at the end followed by path want to add, like what follows when I added both python directories (after install of WinAVR).
+D:\WinAVR-20100110\bin;D:\WinAVR-20100110\utils\bin;%SystemRoot%\system32;%SystemRoot%;%SystemRoot%\System32\Wbem;D:\Program Files\TortoiseHg\;D:\python27;D:\python27\scripts
+
+While in the Environment Variables window, had to create a new system variable called AVR_TOOLS_PATH with a value of D:\Progra~1\arduino-0018\hardware\tools\avr\bin (or the equivalent on your system).  Notice that instead of having D:\Program Files had to change it to D:\Progra~1 as it didn't like space in the path for whatever reason.  Am assuming other versions of the Arduino software (from arduino.cc) are useable, but that is the one I had installed.
+
+Thanks to Rick Pollack over at MakerGear, found a post he did that helped me get past another error..  http://groups.google.com/group/gen3-firmware-development/msg/4bf88910ec3c1562  Just download those two files, unzip them into the appropriate folder, and that piece is good to go (my zip file has it all set).  Thanks again Rick, you Rock.
+
+Then finally I got a clean compile of both the motherboard and the extruder controller.  Modified the extruder controller software to change the ports for my motor, recompiled, then tried uploading it via avrdude, but, or course, that wasn't happening easily...  Soooo, copied the newly compiled .hex file to the ReplicatorG firmware folder, renamed the existing one for v2.3r3 to include _old, copied mine in there, and renamed it to match the original one.  Then used ReplicatorG to upload it and voila, it WORKS!!!!
+
+Have uploaded all this effort to my google docs account.  It is a 2.3 MB zip file and contains the current software as of today, compiled with my change to use the other H-bridge for my extruder motor.  Wanted everything in one place so it will help the next poor slob, err person, that has to change the software and isn't knowledgeable in the fine arts of searching.  It can be done relatively easily soon as they find this post where it's all in one spot.  Hopefully didn't leave anything out.
+https://docs.google.com/leaf?id=0B3Q7ZmfM9jW-ZTI1OTg4ODItZjhmZS00ZThlLWIzYjQtZDEzMDE3MjMyN2Zm&hl=en&authkey=CMvr8esD
+
+Contents of zip file to look for:
+firmware folder - this is actually straight from the ReplicatorG v17 install.  I just copied it here to show what I had done.  It has my modified hex file in there as can tell by the date/time stamp, which should match the stamp in the build_extruder folder.
+v2\build - motherboard build - nothing changed
+v2\build_extruder - extruder board build - this is the compile from my change to use the different h-bridge.
+v2\src\Extruder\boards\ecv22\configuration.hh - this is where changed the pin assignments on the Atmega168 chip to use the other terminal for the extruder motor.  That was originally meant for a fan or something.  You'll see my commented out lines (//) in there, of course with no comments, hehehe.
+
+Have uploaded all of this (well, currently uploading) to my tiny little arduino code storage place on google, with a makerbot tree...  http://code.google.com/p/arduinobykutch/source/browse?repo=makerbot
+
+Enjoy!!!!  hopefully I am all done with it..
+
