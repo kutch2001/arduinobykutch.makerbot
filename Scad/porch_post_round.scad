@@ -8,7 +8,7 @@ connectorwidth = 7;
 smaller = 8;
 difference ()
 {
-	union()
+	rotate ([0,0,90]) union()
 	{
 		translate ([-connectorwidth/2,-(boxwidth-(smaller*3+2))/2,boxheight]) cube ([connectorwidth, boxwidth-(smaller*3+2), connectorheight]);
 		translate ([0,0,0]) cylinder (h=boxheight, r = (boxwidth/2)-smaller);
